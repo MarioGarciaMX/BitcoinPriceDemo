@@ -102,7 +102,7 @@ prepared for real-time adjustments when necessary.
 7. Tight Layout:
     plt.tight_layout() adjusts the plot layout to prevent labels from being cut off.
    
-8.Visualization call:
+8. Visualization call:
     The visualize_bitcoin_prices(delta_path).
 
 
