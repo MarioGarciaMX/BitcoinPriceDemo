@@ -108,5 +108,5 @@ prepared for real-time adjustments when necessary.
 
 
 ### Dependencies ###
-    You will need to install pyspark and delta-spark: pip install pyspark delta-spark matplotlib
+    You will need to install pyspark, delta-spark and matplotlib: pip install pyspark delta-spark matplotlib
     You may also need to configure your spark environment to include the delta-spark jar files.  
