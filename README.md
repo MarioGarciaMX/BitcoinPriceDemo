@@ -18,6 +18,7 @@ prepared for real-time adjustments when necessary.
    The get_bitcoin_id function now efficiently searches the list of cryptocurrencies to find the Bitcoin ID.
 4. Error Handling:
    The code now includes robust error handling using try...except blocks to catch potential requests.exceptions.RequestException errors (e.g., network issues, invalid URLs). It also uses response.raise_for_status() to check for HTTP errors (4xx and 5xx) and raise an exception if they occur. This makes the code more resilient.
+   
 5. API Key Handling:
     The api_key parameter is added to each function that makes an API request.
     The API key is passed in the x-cg-pro-api-key header of the HTTP request.
