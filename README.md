@@ -104,9 +104,6 @@ prepared for real-time adjustments when necessary.
 7. Tight Layout:
     plt.tight_layout() adjusts the plot layout to prevent labels from being cut off.
    
-8. Visualization call:
-    The visualize_bitcoin_prices(delta_path).
-
 
 ### Dependencies ###
     You will need to install pyspark, delta-spark and matplotlib: pip install pyspark delta-spark matplotlib
