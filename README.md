@@ -24,38 +24,38 @@ prepared for real-time adjustments when necessary.
     The API key is passed in the x-cg-pro-api-key header of the HTTP request.
     The code now retrieves the API key from the environment variable COINGECKO_API_KEY. This is the most secure way to store API keys.
     A warning message is displayed if the API Key is not found.
+   
+      5.1 Environment Variables:
+      Using os.environ.get("COINGECKO_API_KEY") is the recommended way to handle API keys. Avoid hardcoding them directly into your script.
 
-  5.1 Environment Variables:
-    Using os.environ.get("COINGECKO_API_KEY") is the recommended way to handle API keys. Avoid hardcoding them directly into your script.
+      5.2 Headers:
+      The headers dictionary is created, and if an API key is provided, it is added to the headers of the request.
 
-  5.2 Headers:
-    The headers dictionary is created, and if an API key is provided, it is added to the headers of the request.
+      5.3 Function Parameter:
+      The API key is now a parameter of all the functions that use the API. this keeps the code organized.
 
-  5.3 Function Parameter:
-    The API key is now a parameter of all the functions that use the API. this keeps the code organized.
-
-  5.4 Security:
-    By using environment variables, you prevent your API key from being accidentally exposed in your code or version control.
+      5.4 Security:
+      By using environment variables, you prevent your API key from being accidentally exposed in your code or version control.
 
 6. Spark Session Initialization:
     spark = SparkSession.builder.appName("BitcoinPricesDelta").getOrCreate() initializes a Spark session.
 
-  6.1 Spark DataFrame Creation:
-    df = spark.createDataFrame(bitcoin_prices) creates a Spark DataFrame from the bitcoin_prices list of dictionaries.
-    df = df.withColumn("timestamp", to_timestamp(col("timestamp"))) converts the timestamp column from Unix timestamps to Spark timestamps.
+      6.1 Spark DataFrame Creation:
+      df = spark.createDataFrame(bitcoin_prices) creates a Spark DataFrame from the bitcoin_prices list of dictionaries.
+      df = df.withColumn("timestamp", to_timestamp(col("timestamp"))) converts the timestamp column from Unix timestamps to Spark timestamps.
 
-  6.2 Delta Lake Saving:
-    delta_path = "bitcoin_prices_delta" sets the path where the Delta Lake table will be saved.
-    df.write.format("delta").mode("overwrite").save(delta_path) writes the DataFrame to Delta Lake format.
-        format("delta") specifies the Delta Lake format.
-        mode("overwrite") overwrites the existing Delta Lake table if it exists. Change it to append if needed.
-        save(delta_path) saves the table to the specified path.
+      6.2 Delta Lake Saving:
+      delta_path = "bitcoin_prices_delta" sets the path where the Delta Lake table will be saved.
+      df.write.format("delta").mode("overwrite").save(delta_path) writes the DataFrame to Delta Lake format.
+      format("delta") specifies the Delta Lake format.
+      mode("overwrite") overwrites the existing Delta Lake table if it exists. Change it to append if needed.
+      save(delta_path) saves the table to the specified path.
 
-  6.3 Error Handling:
-    A try...except block handles potential exceptions during the Delta Lake saving process.
+      6.3 Error Handling:
+      A try...except block handles potential exceptions during the Delta Lake saving process.
 
-  6.4 Spark Session Stop:
-    spark.stop() stops the Spark session to release resources.
+      6.4 Spark Session Stop:
+      spark.stop() stops the Spark session to release resources.
 
 ### window/partition function ###
 1. Spark Session Initialization:
