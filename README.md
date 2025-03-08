@@ -3,6 +3,7 @@
 Objective:
 Develop an automated and scalable process to obtain the 5-day moving
 average of Bitcoin’s price during the first quarter of 2022.
+
 Brief:
 The finance team needs to analyze Bitcoin's behavior to determine if it's feasible
 to invest in this cryptocurrency. Your task is to automate this process and be
