@@ -1,4 +1,4 @@
-# BitcoinPriceDemo
+# Bitcoin Price Demo
 
 Objective:
 Develop an automated and scalable process to obtain the 5-day moving average 
