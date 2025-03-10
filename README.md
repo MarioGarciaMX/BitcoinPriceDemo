@@ -1,22 +1,27 @@
 # BitcoinPriceDemo
 
 Objective:
-Develop an automated and scalable process to obtain the 5-day moving
-average of Bitcoin’s price during the first quarter of 2022.
+Develop an automated and scalable process to obtain the 5-day moving average 
+of Bitcoin’s price during the first quarter of 2022.
+*Note: The CoinGecko API just allow me to retrieve historical data over 
+365 days pryor the current date, for that reason i'm workin with the 
+second quarter of 2024.
 
 Brief:
 The finance team needs to analyze Bitcoin's behavior to determine if it's feasible
 to invest in this cryptocurrency. Your task is to automate this process and be
 prepared for real-time adjustments when necessary.
 
-
 ### Fetch the data from the api ###
 1. Clearer Function Structure:
    The code is organized into well-defined functions (get_cryptocurrencies, get_bitcoin_id, get_bitcoin_price_usd_by_date), making it more readable and maintainable.
+   
 2. Date Handling:
    Uses the datetime module to handle dates and timestamps correctly. The timestamps required by the coingecko API need to be in seconds since epoch. The code now converts the datetime objects to the correct format.
+   
 3. Bitcoin ID Retrieval:
    The get_bitcoin_id function now efficiently searches the list of cryptocurrencies to find the Bitcoin ID.
+   
 4. Error Handling:
    The code now includes robust error handling using try...except blocks to catch potential requests.exceptions.RequestException errors (e.g., network issues, invalid URLs). It also uses response.raise_for_status() to check for HTTP errors (4xx and 5xx) and raise an exception if they occur. This makes the code more resilient.
    
